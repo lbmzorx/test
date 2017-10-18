@@ -5,7 +5,7 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
+use common\models\admin\user\LoginForm;
 
 /**
  * Site controller
@@ -60,6 +60,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $session=\yii::$app->session;
+        var_dump($session);
         return $this->render('index');
     }
 

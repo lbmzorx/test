@@ -25,7 +25,7 @@ return [
             'class' => 'yii\rbac\DbManager', // 使用数据库管理配置文件
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\admin\user\Admins',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],

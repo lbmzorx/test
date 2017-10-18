@@ -20,7 +20,7 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => [
-                'domain' => '.local',
+                'domain' => '.'.DOMAIN,
                 'path' => '/',
                 'name' => '_identity-test',
                 'httpOnly' => true,
@@ -30,7 +30,7 @@ return [
             // this is the name of the session cookie used for login on the explore
             'name' => 'test',
             'cookieParams' => [
-                'domain' => '.local',
+                'domain' => '.'.DOMAIN,
                 'lifetime' => 0,
                 'httpOnly' => true,
                 'path' => '/',
