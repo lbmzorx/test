@@ -14,11 +14,11 @@ use yii\web\IdentityInterface;
  * @property string $username
  * @property string $password_hash
  * @property string $password_reset_token
- * @property string $email
+ * @property string $mail
  * @property string $auth_key
  * @property integer $status
- * @property integer $created_at
- * @property integer $updated_at
+ * @property integer $add_time
+ * @property integer $edit_time
  * @property string $password write-only password
  */
 class User extends ActiveRecord implements IdentityInterface
@@ -41,7 +41,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            [
+                'class' => TimestampBehavior::className(),
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['add_time'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['edit_time'],
+                ],
+            ]
         ];
     }
 

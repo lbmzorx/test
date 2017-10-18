@@ -18,11 +18,22 @@ return [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-fronttest', 'httpOnly' => true],
+            'identityCookie' => [
+                'domain' => '.local',
+                'path' => '/',
+                'name' => '_identity-test',
+                'httpOnly' => true,
+            ],
         ],
         'session' => [
-            // this is the name of the session cookie used for login on the fronttest
-            'name' => 'advanced-frontend',
+            // this is the name of the session cookie used for login on the explore
+            'name' => 'test',
+            'cookieParams' => [
+                'domain' => '.local',
+                'lifetime' => 0,
+                'httpOnly' => true,
+                'path' => '/',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
