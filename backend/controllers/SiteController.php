@@ -60,8 +60,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $session=\yii::$app->session;
-        var_dump($session);
         return $this->render('index');
     }
 
@@ -94,7 +92,6 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
     }
 }
