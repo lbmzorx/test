@@ -24,7 +24,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<?php $assetmanager=$this->getAssetManager();var_dump($assetmanager)?>
 <div class="wrap">
     <?php
     NavBar::begin([
